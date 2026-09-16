@@ -1,6 +1,5 @@
 import os
 import streamlit as st
-from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_chroma import Chroma
 from langchain_community.document_loaders import PyPDFLoader
@@ -8,9 +7,6 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
-
-# Load environment variables
-load_dotenv()
 
 # App title
 st.set_page_config(page_title="PDF Assistant", page_icon="🤖")
@@ -21,6 +17,22 @@ if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 if "vectorstore" not in st.session_state:
     st.session_state.vectorstore = None
+
+# API Key input in sidebar
+with st.sidebar:
+    st.header("🔑 OpenAI API Key")
+    api_key = st.text_input(
+        "Enter your OpenAI API key",
+        type="password",
+        placeholder="sk-..."
+    )
+    st.caption("Your key is never stored or shared. [Get a key](https://platform.openai.com/api-keys)")
+    
+    if not api_key:
+        st.warning("Enter your API key to use the app")
+        st.stop()
+    
+    os.environ["OPENAI_API_KEY"] = api_key
 
 # Sidebar for PDF upload
 with st.sidebar:
