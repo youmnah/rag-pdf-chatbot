@@ -40,6 +40,7 @@ with st.sidebar:
     uploaded_file = st.file_uploader("Click on Upload", type="pdf")
 
     if uploaded_file is not None:
+        os.makedirs("docs", exist_ok=True)
         file_path = os.path.join("docs", uploaded_file.name)
         with open(file_path, "wb") as f:
             f.write(uploaded_file.getbuffer())
