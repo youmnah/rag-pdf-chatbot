@@ -38,5 +38,5 @@ python -m streamlit run app.py
 4. When you ask a question, the most relevant chunks are retrieved
 5. GPT-4o-mini generates an answer based on those chunks
 
-6. ## Demo
+## Demo
 ![RAG Chatbot Demo](RAGChatbotDemo.png)
