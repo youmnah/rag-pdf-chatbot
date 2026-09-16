@@ -37,3 +37,6 @@ python -m streamlit run app.py
 3. Chunks are stored in ChromaDB vector database
 4. When you ask a question, the most relevant chunks are retrieved
 5. GPT-4o-mini generates an answer based on those chunks
+
+## Demo
+![RAG Chatbot Demo](RAGChatbotDemo.png)
