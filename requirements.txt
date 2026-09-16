@@ -1,6 +1,9 @@
-langchain
+langchain==1.4.0
 langchain-openai
 langchain-community
+langchain-chroma
+langchain-text-splitters
+langchain-core
 chromadb
 streamlit
 python-dotenv
