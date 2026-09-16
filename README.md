@@ -40,3 +40,8 @@ python -m streamlit run app.py
 
 ## Demo
 ![RAG Chatbot Demo](RAGChatbotDemo.png)
+
+## 🚀 Live Demo
+👉 [Try it here](https://youmnah-rag-chatbot.streamlit.app)
+
+> You'll need an OpenAI API key to use the demo. [Get one here](https://platform.openai.com/api-keys)
